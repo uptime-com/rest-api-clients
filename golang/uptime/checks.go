@@ -102,7 +102,7 @@ func (s *CheckService) ListAll(ctx context.Context, opt *CheckListOptions) ([]*C
 
 	for clResp.Next != "" {
 		opt.Page++
-		clResp, _, err := s.listChecks(ctx, u, opt)
+		clResp, _, err = s.listChecks(ctx, u, opt)
 		if err != nil {
 			return nil, err
 		}
