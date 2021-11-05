@@ -49,7 +49,7 @@ type Check struct {
 	DNSRecordType string `json:"msp_dns_record_type,omitempty"`
 
 	// For IMAP, POP checks
-	Encryption string `json:"msp_encrytion,omitempty"`
+	Encryption string `json:"msp_encryption,omitempty"`
 
 	// For Transaction checks
 	Script string `json:"msp_script,omitempty"`
