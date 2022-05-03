@@ -28,6 +28,7 @@ type Config struct {
 	Token            string
 	UserAgent        string
 	RateMilliseconds int
+	Subaccount       string
 }
 
 // Client manages communication with the Uptime.com API.
@@ -152,6 +153,9 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 	}
 	if c.Config.UserAgent != "" {
 		req.Header.Add("User-Agent", c.Config.UserAgent)
+	}
+	if c.Config.Subaccount != "" {
+		req.Header.Add("X-Subaccount", c.Config.Subaccount)
 	}
 	return req, nil
 }
